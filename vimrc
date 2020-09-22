@@ -50,6 +50,7 @@
     endif
 " }
 
+
 " General {
 
     set background=dark         " Assume a dark background
@@ -109,6 +110,7 @@
     set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 " }
 
+
 " Key (re)Mappings {
 
     " The default leader is '\', but many people prefer ',' as it's in a standard
@@ -121,9 +123,11 @@
         let mapleader=g:spf13_leader
     endif
 
-" Plugins {
 
-	" Cscope {
+    " Plugins {
+
+	
+    " Cscope {
         if has("cscope")
             set csprg=/usr/bin/cscope              "指定用来执行 cscope 的命令
             set csto=0                             "先搜索tags标签文件，再搜索cscope数据库
@@ -164,7 +168,17 @@
         if gitroot != ''
             let &tags = &tags . ',' . gitroot . '/.git/tags'
         endif
-    " }
+    
+        " }
+
+ "   if has('nvim')
+ "     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
+ "   else
+ "     Plug 'Shougo/deoplete.nvim'
+ "     Plug 'roxma/nvim-yarp'
+ "     Plug 'roxma/vim-hug-neovim-rpc'
+ "   endif
+ "      let g:deoplete#enable_at_startup = 1
 
     " NerdTree {
         if isdirectory(expand("~/.vim/bundle/nerdtree"))
